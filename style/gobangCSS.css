@@ -1,0 +1,112 @@
+#menu {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 10px;
+    border-radius: .25rem;
+}
+#menu ul {
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    overflow:hidden;
+    background-color:rgba(255,255,255,0);
+}
+#menu ul li {
+    float: left;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 15px;
+    font-family: 'Cambria', '华文中宋', '楷体';
+}
+#menu ul li a {
+    padding-bottom: 10px;
+    font-size: 17px;
+}
+#menu ul li a:hover {
+    color: rgba(0, 0, 0, .80);
+    border-bottom: 5px solid rgba(33, 133, 208, .70);
+}
+#menu ul li a:active {
+    color: rgba(0, 0, 0, .80);
+}
+
+#main {
+    width: 100%;
+}
+
+.noStyleButton {
+    border: 0px;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+}
+#board {
+    border: none;
+    outline: none;
+    margin: 0px;
+    padding: 0px;
+    border-collapse: collapse;
+}
+#board tr {
+    margin: 0px;
+    padding: 0px;
+}
+#board td {
+    margin: 0px;
+    padding: 0px;
+}
+#board button {
+    background-color: rgba(255, 255, 255, 0);
+}
+#board img {
+    margin: 0px;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 35px;
+    height: 35px;
+}
+
+/* v 0.1 */
+#side {
+    margin-top: 0;
+}
+#longBlog {
+    font-family: '华文中宋';
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#longBlog h1 {
+    font-size: 25px;
+    margin: 0;
+    text-decoration: none;
+}
+#longBlog p {
+    padding-left: 3%;
+    margin: 0;
+    font-size: 15px;
+}
+#showCnt {
+    text-align: center;
+}
+.pieces {
+    text-align: center;
+}
+.pieces span.piecesCnt {
+    font-size: 30px;
+}
+#blackPieces {
+    padding-right: 10px;
+}
+#whitePieces {
+    padding-left: 10px;
+}
+#showNext {
+    margin-top: 10px;
+}
+#showNext span#next {
+    color: #FF0000;
+}

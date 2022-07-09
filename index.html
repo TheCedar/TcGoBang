@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <meta name = "keywords" content = "五子棋,游戏,棋,在线,双人,gobang,game,oistream,zxp2019,iostream,ofstream"/>
+        <meta name = "description" content = "在线双人对战五子棋游戏"/>
+        <title>五子棋 - Oistream's Blog</title>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"/>
+        <!-- Script -->
+        <!-- <script src = "https://zxp2019.github.io/script/main-v5.js"></script>
+        <script src = "https://zxp2019.github.io/script/data-v5.js"></script> -->
+        <!-- ************************* 本地调试用 ************************* -->
+        <script src = "../script/data-v5.js"></script>
+        <script src = "../script/main-v5.js"></script>
+        <!-- ************************************************************* -->
+        <script src = "./script/gobangMain.js"></script>
+        <script src = "./script/gobangData.js"></script>
+        <!-- Stylesheet -->
+        <!-- <link rel = "stylesheet" href = "https://zxp2019.github.io/style/divcss-v4.css"/>
+        <link rel = "stylesheet" href = "https://zxp2019.github.io/style/allcss-v4.css"/>
+        <link rel = "stylesheet" href = "https://zxp2019.github.io/style/decocss-v4.css"/> -->
+        <!-- ************************* 本地调试用 ************************* -->
+        <link rel = "stylesheet" href = "../style/divcss-v4.css"/>
+        <link rel = "stylesheet" href = "../style/allcss-v4.css"/>
+        <link rel = "stylesheet" href = "../style/decocss-v4.css"/>
+        <!-- ************************************************************* -->
+        <link rel = "stylesheet" href = "./style/gobangCSS.css">
+    </head>
+    <body>
+        <script src = "https://zxp2019.github.io/script/browser.js"></script>
+        <script>
+            gobangInit();
+        </script>
+        <div id = "container">
+            <div id = "menu">
+                <ul>
+                    <li>五子棋游戏</li>
+                    <li><a href = "https://zxp2019.github.io" target = "_blank">作者博客</a></li>
+                    <li><a href = "https://github.com/zxp2019" target = "_blank">作者 Github</a></li>
+                    <li><a href = "https://github.com/zxp2019/gobang" target = "_blank">查看代码</a></li>
+                    <li><a href = "https://github.com/zxp2019/gobang/issues" target = "_blank">意见反馈</a></li>
+                </ul>
+            </div>
+            <div id = "main" class = "line">
+                <div id = "longBlog">
+                    <div id = "boardContainer">
+                        <table id = "board">
+                            <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,1);">
+                                <img id = "piece1_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,2);">
+                                <img id = "piece1_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,3);">
+                                <img id = "piece1_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,4);">
+                                <img id = "piece1_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,5);">
+                                <img id = "piece1_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,6);">
+                                <img id = "piece1_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,7);">
+                                <img id = "piece1_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,8);">
+                                <img id = "piece1_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,9);">
+                                <img id = "piece1_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,10);">
+                                <img id = "piece1_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,11);">
+                                <img id = "piece1_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,12);">
+                                <img id = "piece1_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,13);">
+                                <img id = "piece1_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,14);">
+                                <img id = "piece1_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(1,15);">
+                                <img id = "piece1_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,1);">
+                                <img id = "piece2_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,2);">
+                                <img id = "piece2_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,3);">
+                                <img id = "piece2_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,4);">
+                                <img id = "piece2_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,5);">
+                                <img id = "piece2_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,6);">
+                                <img id = "piece2_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,7);">
+                                <img id = "piece2_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,8);">
+                                <img id = "piece2_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,9);">
+                                <img id = "piece2_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,10);">
+                                <img id = "piece2_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,11);">
+                                <img id = "piece2_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,12);">
+                                <img id = "piece2_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,13);">
+                                <img id = "piece2_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,14);">
+                                <img id = "piece2_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(2,15);">
+                                <img id = "piece2_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,1);">
+                                <img id = "piece3_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,2);">
+                                <img id = "piece3_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,3);">
+                                <img id = "piece3_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,4);">
+                                <img id = "piece3_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,5);">
+                                <img id = "piece3_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,6);">
+                                <img id = "piece3_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,7);">
+                                <img id = "piece3_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,8);">
+                                <img id = "piece3_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,9);">
+                                <img id = "piece3_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,10);">
+                                <img id = "piece3_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,11);">
+                                <img id = "piece3_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,12);">
+                                <img id = "piece3_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,13);">
+                                <img id = "piece3_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,14);">
+                                <img id = "piece3_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(3,15);">
+                                <img id = "piece3_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,1);">
+                                <img id = "piece4_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,2);">
+                                <img id = "piece4_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,3);">
+                                <img id = "piece4_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,4);">
+                                <img id = "piece4_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,5);">
+                                <img id = "piece4_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,6);">
+                                <img id = "piece4_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,7);">
+                                <img id = "piece4_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,8);">
+                                <img id = "piece4_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,9);">
+                                <img id = "piece4_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,10);">
+                                <img id = "piece4_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,11);">
+                                <img id = "piece4_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,12);">
+                                <img id = "piece4_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,13);">
+                                <img id = "piece4_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,14);">
+                                <img id = "piece4_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(4,15);">
+                                <img id = "piece4_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,1);">
+                                <img id = "piece5_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,2);">
+                                <img id = "piece5_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,3);">
+                                <img id = "piece5_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,4);">
+                                <img id = "piece5_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,5);">
+                                <img id = "piece5_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,6);">
+                                <img id = "piece5_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,7);">
+                                <img id = "piece5_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,8);">
+                                <img id = "piece5_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,9);">
+                                <img id = "piece5_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,10);">
+                                <img id = "piece5_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,11);">
+                                <img id = "piece5_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,12);">
+                                <img id = "piece5_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,13);">
+                                <img id = "piece5_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,14);">
+                                <img id = "piece5_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(5,15);">
+                                <img id = "piece5_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,1);">
+                                <img id = "piece6_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,2);">
+                                <img id = "piece6_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,3);">
+                                <img id = "piece6_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,4);">
+                                <img id = "piece6_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,5);">
+                                <img id = "piece6_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,6);">
+                                <img id = "piece6_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,7);">
+                                <img id = "piece6_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,8);">
+                                <img id = "piece6_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,9);">
+                                <img id = "piece6_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,10);">
+                                <img id = "piece6_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,11);">
+                                <img id = "piece6_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,12);">
+                                <img id = "piece6_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,13);">
+                                <img id = "piece6_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,14);">
+                                <img id = "piece6_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(6,15);">
+                                <img id = "piece6_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,1);">
+                                <img id = "piece7_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,2);">
+                                <img id = "piece7_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,3);">
+                                <img id = "piece7_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,4);">
+                                <img id = "piece7_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,5);">
+                                <img id = "piece7_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,6);">
+                                <img id = "piece7_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,7);">
+                                <img id = "piece7_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,8);">
+                                <img id = "piece7_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,9);">
+                                <img id = "piece7_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,10);">
+                                <img id = "piece7_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,11);">
+                                <img id = "piece7_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,12);">
+                                <img id = "piece7_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,13);">
+                                <img id = "piece7_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,14);">
+                                <img id = "piece7_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(7,15);">
+                                <img id = "piece7_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,1);">
+                                <img id = "piece8_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,2);">
+                                <img id = "piece8_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,3);">
+                                <img id = "piece8_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,4);">
+                                <img id = "piece8_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,5);">
+                                <img id = "piece8_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,6);">
+                                <img id = "piece8_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,7);">
+                                <img id = "piece8_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,8);">
+                                <img id = "piece8_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,9);">
+                                <img id = "piece8_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,10);">
+                                <img id = "piece8_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,11);">
+                                <img id = "piece8_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,12);">
+                                <img id = "piece8_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,13);">
+                                <img id = "piece8_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,14);">
+                                <img id = "piece8_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(8,15);">
+                                <img id = "piece8_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,1);">
+                                <img id = "piece9_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,2);">
+                                <img id = "piece9_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,3);">
+                                <img id = "piece9_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,4);">
+                                <img id = "piece9_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,5);">
+                                <img id = "piece9_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,6);">
+                                <img id = "piece9_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,7);">
+                                <img id = "piece9_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,8);">
+                                <img id = "piece9_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,9);">
+                                <img id = "piece9_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,10);">
+                                <img id = "piece9_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,11);">
+                                <img id = "piece9_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,12);">
+                                <img id = "piece9_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,13);">
+                                <img id = "piece9_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,14);">
+                                <img id = "piece9_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(9,15);">
+                                <img id = "piece9_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,1);">
+                                <img id = "piece10_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,2);">
+                                <img id = "piece10_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,3);">
+                                <img id = "piece10_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,4);">
+                                <img id = "piece10_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,5);">
+                                <img id = "piece10_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,6);">
+                                <img id = "piece10_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,7);">
+                                <img id = "piece10_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,8);">
+                                <img id = "piece10_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,9);">
+                                <img id = "piece10_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,10);">
+                                <img id = "piece10_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,11);">
+                                <img id = "piece10_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,12);">
+                                <img id = "piece10_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,13);">
+                                <img id = "piece10_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,14);">
+                                <img id = "piece10_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(10,15);">
+                                <img id = "piece10_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,1);">
+                                <img id = "piece11_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,2);">
+                                <img id = "piece11_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,3);">
+                                <img id = "piece11_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,4);">
+                                <img id = "piece11_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,5);">
+                                <img id = "piece11_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,6);">
+                                <img id = "piece11_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,7);">
+                                <img id = "piece11_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,8);">
+                                <img id = "piece11_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,9);">
+                                <img id = "piece11_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,10);">
+                                <img id = "piece11_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,11);">
+                                <img id = "piece11_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,12);">
+                                <img id = "piece11_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,13);">
+                                <img id = "piece11_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,14);">
+                                <img id = "piece11_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(11,15);">
+                                <img id = "piece11_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,1);">
+                                <img id = "piece12_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,2);">
+                                <img id = "piece12_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,3);">
+                                <img id = "piece12_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,4);">
+                                <img id = "piece12_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,5);">
+                                <img id = "piece12_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,6);">
+                                <img id = "piece12_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,7);">
+                                <img id = "piece12_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,8);">
+                                <img id = "piece12_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,9);">
+                                <img id = "piece12_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,10);">
+                                <img id = "piece12_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,11);">
+                                <img id = "piece12_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,12);">
+                                <img id = "piece12_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,13);">
+                                <img id = "piece12_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,14);">
+                                <img id = "piece12_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(12,15);">
+                                <img id = "piece12_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,1);">
+                                <img id = "piece13_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,2);">
+                                <img id = "piece13_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,3);">
+                                <img id = "piece13_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,4);">
+                                <img id = "piece13_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,5);">
+                                <img id = "piece13_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,6);">
+                                <img id = "piece13_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,7);">
+                                <img id = "piece13_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,8);">
+                                <img id = "piece13_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,9);">
+                                <img id = "piece13_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,10);">
+                                <img id = "piece13_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,11);">
+                                <img id = "piece13_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,12);">
+                                <img id = "piece13_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,13);">
+                                <img id = "piece13_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,14);">
+                                <img id = "piece13_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(13,15);">
+                                <img id = "piece13_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,1);">
+                                <img id = "piece14_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,2);">
+                                <img id = "piece14_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,3);">
+                                <img id = "piece14_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,4);">
+                                <img id = "piece14_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,5);">
+                                <img id = "piece14_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,6);">
+                                <img id = "piece14_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,7);">
+                                <img id = "piece14_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,8);">
+                                <img id = "piece14_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,9);">
+                                <img id = "piece14_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,10);">
+                                <img id = "piece14_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,11);">
+                                <img id = "piece14_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,12);">
+                                <img id = "piece14_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,13);">
+                                <img id = "piece14_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,14);">
+                                <img id = "piece14_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(14,15);">
+                                <img id = "piece14_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,1);">
+                                <img id = "piece15_1" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,2);">
+                                <img id = "piece15_2" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,3);">
+                                <img id = "piece15_3" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,4);">
+                                <img id = "piece15_4" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,5);">
+                                <img id = "piece15_5" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,6);">
+                                <img id = "piece15_6" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,7);">
+                                <img id = "piece15_7" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,8);">
+                                <img id = "piece15_8" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,9);">
+                                <img id = "piece15_9" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,10);">
+                                <img id = "piece15_10" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,11);">
+                                <img id = "piece15_11" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,12);">
+                                <img id = "piece15_12" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,13);">
+                                <img id = "piece15_13" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,14);">
+                                <img id = "piece15_14" src = "./img/board.png">
+                                </button>
+                                </td>
+                                <td>
+                                <button class = "noStyleButton" onclick = "putPiece(15,15);">
+                                <img id = "piece15_15" src = "./img/board.png">
+                                </button>
+                                </td>
+                                </tr>
+                                
+                        </table>
+                    </div>
+                </div>
+                <div id = "side">
+                    <div id = "longBlog">
+                        <div id = "showCnt">
+                            <div class = "line">
+                                <div id = "blackPieces" class = "pieces" style = "padding-right: 10px; color: #FF0000">
+                                    黑方已下<br/>
+                                    <span id = "blackCnt" class = "piecesCnt" style = "color: #FF0000">0</span><br/>
+                                    子
+                                </div>
+                                <div id = "whitePieces" class = "pieces" style = "padding-left: 10px;">
+                                    白方已下<br/>
+                                    <span id = "whiteCnt" class = "piecesCnt">0</span><br/>
+                                    子
+                                </div>
+                            </div>
+                            <div id = "showNext">
+                                接下来轮到：<span id = "next">黑方</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id = "side">
+                    <div id = "longBlog">
+                        <h1>游戏规则</h1>
+                        <p>黑白双方轮流在棋盘上放子，横向、纵向或斜向先成五子者赢得游戏。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
